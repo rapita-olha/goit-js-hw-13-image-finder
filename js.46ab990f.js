@@ -71,4 +71,4 @@ module.exports=require("./lib/axios");
 },{}],"QvaY":[function(require,module,exports) {
 "use strict";require("../styles.css");var e=a(require("../templates/image-card.hbs")),t=a(require("./apiService")),r=require("./refs");function a(e){return e&&e.__esModule?e:{default:e}}const n=new t.default;async function s(e){e.preventDefault(),r.gallery.innerHTML="";const t=e.target.elements.query.value.trim();if(n.searchQuery=t,""===t)alert("Please, enter your request!");else{n.resetPage(),i(await n.fetchData())}}function i(t){r.gallery.insertAdjacentHTML("beforeend",(0,e.default)(t))}async function l(e){n.incrementPage(),i(await n.fetchData()),r.gallery.scrollIntoView({behavior:"smooth",block:"end"})}r.searchForm.addEventListener("submit",s),r.loadMoreBtn.addEventListener("click",l);
 },{"../styles.css":"Tnu0","../templates/image-card.hbs":"h0BW","./apiService":"eQwa","./refs":"VyiV"}]},{},["QvaY"], null)
-//# sourceMappingURL=/goit-js-hw-13-image-finder/js.7a81fe96.js.map
+//# sourceMappingURL=/goit-js-hw-13-image-finder/js.46ab990f.js.map
