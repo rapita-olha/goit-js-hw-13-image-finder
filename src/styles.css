@@ -1,3 +1,7 @@
+.body {
+  background-color: yellowgreen;
+}
+
 .gallery {
   background-color: teal;
   display: flex;
