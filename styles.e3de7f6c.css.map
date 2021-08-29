@@ -1,1 +1,0 @@
-{"version":3,"sources":["styles.css"],"names":[],"mappings":"AAAA,MACE,wBACF,CAEA,SACE,qBAAsB,CACtB,YAAa,CACb,cACF","file":"styles.e3de7f6c.css","sourceRoot":"../src","sourcesContent":[".body {\n  background-color: yellowgreen;\n}\n\n.gallery {\n  background-color: teal;\n  display: flex;\n  flex-wrap: wrap;\n}\n"]}
