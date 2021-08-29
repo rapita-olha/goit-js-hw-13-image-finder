@@ -71,4 +71,4 @@ module.exports=require("./lib/axios");
 },{}],"QvaY":[function(require,module,exports) {
 "use strict";require("../styles.css");var e=r(require("../templates/image-card.hbs")),t=r(require("./apiService")),a=require("./refs");function r(e){return e&&e.__esModule?e:{default:e}}const n="23099958-a9e73d010620c28e46bfb8a54",i="https://pixabay.com/api/?";async function c(t){t.preventDefault();const a=t.target.elements.query.value.trim();""!==a&&(e.default.resetPage(),e.default.searchQuery=a,s(await e.default.fetchData()),e.default.incrementPage())}function s(t){a.gallery.insertAdjacentHTML("beforeend",(0,e.default)(t))}async function u(t){e.default.incrementPage(),s(await e.default.fetchData()),a.gallery.scrollIntoView({behavior:"smooth",block:"end"})}a.searchForm.addEventListener("submit",c),a.loadMoreBtn.addEventListener("click",u);
 },{"../styles.css":"Tnu0","../templates/image-card.hbs":"h0BW","./apiService":"eQwa","./refs":"VyiV"}]},{},["QvaY"], null)
-//# sourceMappingURL=/goit-js-hw-13-image-finder/js.2364cdd8.js.map
+//# sourceMappingURL=/goit-js-hw-13-image-finder/js.f2470082.js.map
