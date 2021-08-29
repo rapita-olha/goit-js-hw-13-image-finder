@@ -1,5 +1,6 @@
 import axios from 'axios';
 axios.defaults.baseURL = 'https://pixabay.com/api/?image_type=photo&orientation=horizontal';
+
 export default class imageServiceApi {
   constructor(key) {
     this.query = '';
@@ -8,7 +9,7 @@ export default class imageServiceApi {
   }
 
   async fetchData() {
-    const url = '&q=${this.query}&page=${this.page}&per_page=12&key=${this.key}';
+    const url = '&q=${this.query}&page=${this.page}&per_page=12&key=${this.KEY}';
     const {
       data: { hits },
     } = await axios.get(url);

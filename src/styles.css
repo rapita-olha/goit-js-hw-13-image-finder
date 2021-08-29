@@ -1,0 +1,5 @@
+.gallery {
+  background-color: teal;
+  display: flex;
+  flex-wrap: wrap;
+}
