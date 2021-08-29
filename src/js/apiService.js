@@ -1,21 +1,19 @@
 import axios from 'axios';
 axios.defaults.baseURL = 'https://pixabay.com/api/?image_type=photo&orientation=horizontal';
 
+const KEY = '23099958-a9e73d010620c28e46bfb8a54';
 export default class imageServiceApi {
   constructor(key) {
     this.query = '';
-    this.page = '1';
-    this.key = key;
+    this.page = 1;
   }
 
   async fetchData() {
-    const url = '&q=${this.query}&page=${this.page}&per_page=12&key=${this.KEY}';
+    const url = `&q=${this.query}&page=${this.page}&per_page=12&key=${KEY}`;
     const {
       data: { hits },
     } = await axios.get(url);
     return hits;
-    // console.log(data);
-    // return fetch(url).then(response => response.json()).then(data => data.hits);
   }
 
   get searchQuery() {
@@ -34,6 +32,3 @@ export default class imageServiceApi {
     this.page += 1;
   }
 }
-
-// const imageSearchService = new imageServiceApi('22995461-dcfca2d4906f7ecb85a6d619d');
-// imageSearchService.fetchData();

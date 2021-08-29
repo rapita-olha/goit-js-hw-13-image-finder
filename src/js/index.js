@@ -1,27 +1,25 @@
 import '../styles.css';
 import imageCardTpl from '../templates/image-card.hbs';
-import imageSearchApi from '../templates/image-card.hbs';
-import imageServiceApi from './apiService';
+import ImageServiceApi from './apiService';
 import { searchForm, gallery, loadMoreBtn } from './refs';
-const KEY = '23099958-a9e73d010620c28e46bfb8a54';
-const BASE_URL = 'https://pixabay.com/api/?';
+
+const imgServiceApi = new ImageServiceApi();
 
 searchForm.addEventListener('submit', onSubmit);
 loadMoreBtn.addEventListener('click', onLoadMoreClick);
 
 async function onSubmit(e) {
   e.preventDefault();
+  gallery.innerHTML = '';
   const value = e.target.elements.query.value.trim();
+  imgServiceApi.searchQuery = value;
   if (value === '') {
-    return;
+    alert('Please, enter your request!');
+  } else {
+    imgServiceApi.resetPage();
+    const data = await imgServiceApi.fetchData();
+    renderImages(data);
   }
-
-  imageSearchApi.resetPage();
-
-  imageSearchApi.searchQuery = value;
-  const data = await imageSearchApi.fetchData();
-  renderImages(data);
-  imageSearchApi.incrementPage();
 }
 
 function renderImages(data) {
@@ -29,8 +27,8 @@ function renderImages(data) {
 }
 
 async function onLoadMoreClick(e) {
-  imageSearchApi.incrementPage();
-  const data = await imageSearchApi.fetchData();
+  imgServiceApi.incrementPage();
+  const data = await imgServiceApi.fetchData();
   renderImages(data);
 
   // const element = document.getElementById('.my-element-selector');

@@ -1,9 +1,62 @@
-.body {
-  background-color: yellowgreen;
-}
-
 .gallery {
   background-color: teal;
+  width: max-width;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding-bottom: 10px;
+}
+
+.photo-card {
+  padding: 20px;
+  width: 350px;
+  height: 400px;
+}
+
+.stats {
+  color: aquamarine;
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.search-form {
+  display: block;
+  width: 310px;
+  padding: 15px 25px;
+  margin: 0 auto;
+  border: none;
+  border-radius: 40px;
+  background: turquoise;
+  font-weight: 600;
+  font-size: 20px;
+  color: black;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  border-radius: 3px;
+  border-color: turquoise;
+  border-radius: solid 3px;
+  display: block;
+  width: 450px;
+  height: 350px;
+}
+
+.loadmore-btn {
+  display: block;
+  width: 310px;
+  padding: 15px 25px;
+  margin: 0 auto;
+  border: none;
+  border-radius: 40px;
+  background: turquoise;
+  font-weight: 600;
+  font-size: 20px;
+  color: black;
 }
